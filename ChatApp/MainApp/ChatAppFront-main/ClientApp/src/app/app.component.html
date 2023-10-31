@@ -1,0 +1,28 @@
+<!-- <div id="background_header"></div>
+<div id="background_body"></div>
+
+<div id="chatContainer">
+  <app-sidebar
+    
+  ></app-sidebar>
+  <div id="chat">
+    <div id="chatPlaceholder" *ngIf = "!conversation" >
+        <div class="video-container">
+            <video width="400" height="200" autoplay loop muted>
+              <source src="../../assets/images/ChatVideo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+      <h2>Keep your phone connected</h2>
+      <p>
+        ChatApp connects your phone to sync messages. To reduce data<br />
+        usage, connect to your phone to Wi-Fi.
+      </p>
+      
+    </div>
+
+    <app-chat *ngIf = "conversation"></app-chat>
+  </div>
+</div> -->
+
+<router-outlet></router-outlet>

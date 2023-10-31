@@ -1,0 +1,77 @@
+{
+  "User": [
+    {
+      "id": 1,
+      "email": "abc@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "email": "abcd@gmail.com",
+      "password": "1d23"
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 4
+    },
+    {
+      "email": "nhx",
+      "password": "nx",
+      "id": 5
+    },
+    {
+      "email": "Vishu@gmail.com",
+      "password": "Vis@123",
+      "id": 6
+    },
+    {
+      "email": "Vishu@gmail.com",
+      "password": "Vis@1233rfe3r",
+      "id": 7
+    }
+  ],
+  "Register": [
+    {
+      "id": 1,
+      "fName": "",
+      "lName": "",
+      "email": "abc@gmail.com",
+      "dob": "",
+      "contact": "",
+      "password": ""
+    },
+    {
+      "email": "abc@gmail.com",
+      "fname": "abc",
+      "lname": "aadd",
+      "contact": "9874563211",
+      "dob": "2023-10-18",
+      "password": "1123@123",
+      "id": 2
+    },
+    {
+      "email": "awwbc@gmail.com",
+      "fname": "abc",
+      "lname": "aadd",
+      "contact": "9874563211",
+      "dob": "2023-10-18",
+      "password": "1123@123",
+      "id": 3
+    },
+    {
+      "email": "abs@gmial.com",
+      "fname": "yuvraj",
+      "lname": "jadjfs",
+      "contact": "1236578966",
+      "dob": "2023-10-15",
+      "password": "@Acha1234",
+      "id": 4
+    }
+  ]
+}

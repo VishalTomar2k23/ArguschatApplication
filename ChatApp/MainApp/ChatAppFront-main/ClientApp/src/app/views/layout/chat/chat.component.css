@@ -1,0 +1,227 @@
+#container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+    
+    flex-direction: column;
+}
+
+#container #header {
+    min-height: 67px;
+    background-color: rgb(152, 255, 229);
+    box-shadow: 2px 0px 4px #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#container #header .avatarSection {
+    display: flex;
+}
+#container #header .avatarSection .picture {
+    min-width: 40px;
+    max-width: 40px;
+    margin: 0 10px;
+}
+#container #header .avatarSection .picture img {
+    max-width: 100%;
+}
+#container #header .avatarSection .nameSection {
+    flex-grow: 1;
+    color: #545454;
+    display: flex;
+    align-items: center;
+}
+#container #header .actionButtons {
+    min-width: 50px;
+    display: flex;
+}
+#container #header .actionButtons img {
+    width: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+#container #body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    padding: 10px 20px;
+    overflow-y: auto;
+    background-image: url(/src/assets/images/Back.jpg) image-set(width 20px);
+}
+#container #body .message {
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    color: #070707;
+    flex-direction: column;
+}
+#container #body .message .messageContent {
+    background-color: whitesmoke;
+    border-radius: 30px;
+    padding: 10px;
+    max-width: 300px;
+    word-wrap: break-word;
+    border: 1px dashed #888;
+}
+#container #body .message .messageContent .time {
+    text-align: right;
+    color: #959698;
+    font-size: 13px;
+    margin-top: 5px;
+}
+#container #body .message.me {
+    align-items: flex-end;
+}
+#container #body .message.me .messageContent {
+    background-color: #f3f0ed;
+}
+#container #footer {
+    min-height: 67px;
+    background-color: #f0eeed;
+    display: flex;
+}
+#container #footer #smileyIcon {
+    flex-basis: 50px;
+}
+#container #footer #textarea {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+#container #footer #textarea textarea {
+    width: 100%;
+    height: 45px;
+    border: 0px;
+    border-radius: 4px;
+    resize: none;
+    outline: none;
+    padding: 14px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+#container #footer #micIcon {
+    flex-basis: 50px;
+}
+#container #footer #micIcon, #container #footer #smileyIcon ,#container #footer #fileIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#container #footer #micIcon img, #container #footer #smileyIcon img , #container #footer #fileIcon img {
+    max-width: 40%;
+    cursor: pointer;
+}
+
+#container #footer #fileIcon {
+    flex-basis: 50px;
+}
+
+
+
+#container #footer #smileyIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container #footer #smileyIcon img {
+    max-width: 40%;
+    cursor: pointer;
+}
+
+#container #footer #smileyIcon {
+    flex-basis: 50px;
+}
+
+#chatForm {
+    margin-bottom: 0;
+}
+.replymsg{
+    background-color: rgb(220, 247, 232);
+    padding: 10px;
+    border-radius: 5px;
+}
+.overflowrap{
+    overflow-wrap: anywhere;
+}
+/* Preview Css */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .file-upload {
+    margin-bottom: 15px;
+  }
+  
+  img, audio, video {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  /* Reply Message Css */
+  .replymsg {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  
+  .overflowrap {
+    overflow: hidden;
+  }
+  
+  .messageContent {
+    padding: 10px;
+    border: 3px solid #ddd;
+    margin-bottom: 10px;
+  }
+  /* ProfilePic after Chat */
+ 
+  .time {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+  }
+  
+  .reply button {
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Optional: Style for the reply icon */
+  .reply button i {
+    color: #007bff;
+  }
+  
+  

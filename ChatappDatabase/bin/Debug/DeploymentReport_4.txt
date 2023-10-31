@@ -1,0 +1,47 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       [dbo].[Profiles]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Profiles].[Designation] on table [dbo].[Profiles] must be added, but the column has no default value
+         and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+       The column [dbo].[Profiles].[Status] on table [dbo].[Profiles] must be added, but the column has no default value and
+         does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+
+** User actions
+     Recreate table
+       [dbo].[Profiles] (Table)
+     Create
+       [dbo].[Connections] (Table)
+       [dbo].[GroupMembers] (Table)
+       [dbo].[GroupMessages] (Table)
+       [dbo].[Groups] (Table)
+       [dbo].[Notifications] (Table)
+       Default Constraint: unnamed constraint on [dbo].[Connections] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[GroupMembers] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[GroupMessages] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[GroupMessages] (Default Constraint)
+       [dbo].[FK_Messages_ProfileId_To_Profiles] (Foreign Key)
+       [dbo].[FK_GroupMembers_GrpId_To_Groups] (Foreign Key)
+       [dbo].[FK_GroupMembers_ProfileId_To_Profiles] (Foreign Key)
+       [dbo].[FK_GroupMessages_GrpId_To_Groups] (Foreign Key)
+       [dbo].[FK_Groups_CreatedBy_To_Profiles] (Foreign Key)
+       [dbo].[FK_Notifications_FromId_To_Profiles] (Foreign Key)
+       [dbo].[FK_Notifications_ToId_To_Profiles] (Foreign Key)
+       [dbo].[FK_Notifications_GroupID_To_Groups] (Foreign Key)
+
+** Supporting actions
+
+The column [dbo].[Profiles].[Designation] on table [dbo].[Profiles] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[Profiles].[Status] on table [dbo].[Profiles] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+If this deployment is executed, changes to [dbo].[Profiles] might introduce run-time errors in [dbo].[GetAllConversationByUId].
+If this deployment is executed, changes to [dbo].[Profiles] might introduce run-time errors in [dbo].[GetAllConversationByUserId].
+If this deployment is executed, changes to [dbo].[Profiles] might introduce run-time errors in [dbo].[GetAllConversationByUserIdsBoth].
+

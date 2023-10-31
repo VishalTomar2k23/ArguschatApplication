@@ -1,0 +1,27 @@
+<div id="background_header"></div>
+<div id="background_body"></div>
+
+<div id="chatContainer">
+  <app-sidebar
+    
+  ></app-sidebar>
+  <div id="chat">
+    <div id="chatPlaceholder" *ngIf = "!conversation" >
+       
+      <h2>Keep your phone connected</h2>
+      <p>
+        ChatApp connects your phone to sync messages. To reduce data<br />
+        usage, connect to your phone to Wi-Fi.
+      </p>
+      
+    </div>
+
+    <app-chat *ngIf = "conversation"
+    (dataEmitter)="handleData($event)"
+    [conversations] = "conversations"
+    [currentUserId]="currentUserId"
+    [currentUserName]="currentUserName"
+    [otheruserName]="otheruserName"
+    ></app-chat>
+  </div>
+</div>

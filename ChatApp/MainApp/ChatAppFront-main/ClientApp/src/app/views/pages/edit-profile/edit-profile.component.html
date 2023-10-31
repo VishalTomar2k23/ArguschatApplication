@@ -1,0 +1,92 @@
+
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Update Profile</h4>
+      <form enctype="multipart/form-data" (ngSubmit)="onSubmit()"  #f="ngForm">
+  
+        <div class="mb-3">
+          <label for="username" class="form-label">UserName</label>
+          <input type="text" class="form-control" id="exampleInputDisabled1" readonly [(ngModel)]="loggedInUser.userName" name="username" >
+        </div>
+  
+        <div class="mb-3">
+          <label for="fname" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="fname" [(ngModel)]="loggedInUser.firstName" name="fname" placeholder="Enter First Name" #fname="ngModel" required>
+        </div>
+        <span *ngIf="fname.invalid && fname.touched" class="text-danger"><p>This is a Required Field</p></span>
+  
+        <div class="mb-3">
+          <label for="lname" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lname"  [(ngModel)]="loggedInUser.lastName" name="lname" placeholder="Enter Last Name" #lname="ngModel" required>
+        </div>
+        <span *ngIf="lname.invalid && lname.touched" class="text-danger"><p>This is a Required Field</p></span>
+  
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="Email"  [(ngModel)]="loggedInUser.email" name="Email" placeholder="Enter Email" #Email="ngModel" required email>
+        </div>
+        <span *ngIf = "Email.invalid && Email.touched" class="text-danger"><p>Enter a Valid Email</p></span>
+  
+        <div class="mb-3">
+          <label class="form-label" for="formFile">Profile Image Upload</label>
+          <input class="form-control" type="file" id="ProfileImage" (change)="onFileSelected($event)" name="ProfileImage" accept="image/*">
+        </div>
+  
+        <button [disabled]="!((f.valid && f.dirty)|| loggedInUser.ProfileImage)" class="btn btn-primary" type="submit">Submit form</button>
+        <button class="btn btn-primary" type="button" style="margin-left: 1rem;" (click)="openBasicModal(basicModal)">Change Password</button>
+      </form>
+    </div>
+  </div>
+  <!-- <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Dropdown button
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div> -->
+  <ng-template #basicModal let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <button type="button" class="close" (click)="modal.close('by: close icon')" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="card card-outline-secondary">
+        <div class="card-body">
+            <form class="form" role="form"  (ngSubmit)="onSubmit()"  #g="ngForm">
+                <div class="form-group">
+                    <label for="inputPasswordOld">Current Password</label>
+                    <input type="password" class="form-control" id="inputPasswordOld" autocomplete="on" name="old" [(ngModel)]="changepassword.old" #old="ngModel" required minlength="8">
+                </div>
+                <span *ngIf="old.invalid && old.touched" class="text-danger"><p>minimum 8 letter required</p></span>
+                <div class="form-group">
+                    <label for="inputPasswordNew">New Password</label>
+                    <input type="password" class="form-control" id="inputPasswordNew" autocomplete="on" name="newp" [(ngModel)]="changepassword.newp" #newp="ngModel" required minlength="8">
+                </div>
+                <span *ngIf="newp.invalid && newp.touched" class="text-danger"><p>minimum 8 letter required</p></span>
+                <div class="form-group">
+                    <label for="inputPasswordNewVerify">Verify</label>
+                    <input type="password" class="form-control" autocomplete="on" id="inputPasswordNewVerify" name="verify" [(ngModel)]="changepassword.verify" #verify="ngModel" required minlength="8">
+                </div>
+                <span *ngIf="verify.invalid && verify.touched" class="text-danger"><p>minimum 8 letter required</p></span>
+                <span *ngIf="verify.touched && newp.touched && changepassword.newp!=changepassword.verify" class="text-danger"><p>Password does not match</p></span>
+            </form>
+        </div>
+    </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.close()">Close</button>
+      <button type="button" class="btn btn-primary" [disabled]="!g.valid" (click)="change();modal.close()">Change Password</button>
+    </div>
+    <nav>
+      <div class="button-container">
+      <a href="" routerLink="/home">Home</a> |
+      <a href="" routerLink="/login">Login</a> |
+      <a href="" routerLink="/signup">Signup</a>
+      </div>
+    </nav>
+  </ng-template>

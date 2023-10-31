@@ -1,0 +1,37 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Connections] (Table)
+       [dbo].[GroupMembers] (Table)
+       [dbo].[GroupMessages] (Table)
+       [dbo].[Groups] (Table)
+       [dbo].[Messages] (Table)
+       [dbo].[Notifications] (Table)
+       [dbo].[Profiles] (Table)
+       Default Constraint: unnamed constraint on [dbo].[Connections] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[GroupMembers] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[GroupMessages] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[GroupMessages] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Messages] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Messages] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Messages] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Profiles] (Default Constraint)
+       [dbo].[FK_Messages_ProfileId_To_Profiles] (Foreign Key)
+       [dbo].[FK_GroupMembers_GrpId_To_Groups] (Foreign Key)
+       [dbo].[FK_GroupMembers_ProfileId_To_Profiles] (Foreign Key)
+       [dbo].[FK_GroupMessages_GrpId_To_Groups] (Foreign Key)
+       [dbo].[FK_Groups_CreatedBy_To_Profiles] (Foreign Key)
+       [dbo].[FK_Notifications_FromId_To_Profiles] (Foreign Key)
+       [dbo].[FK_Notifications_ToId_To_Profiles] (Foreign Key)
+       [dbo].[FK_Notifications_GroupID_To_Groups] (Foreign Key)
+
+** Supporting actions

@@ -1,0 +1,9 @@
+body {
+    margin: 0px;
+    font-family: sans-serif;
+    color: #a2a3a4;
+}
+body a {
+    color: #1fcee6;
+    text-decoration: none;
+}

@@ -1,0 +1,140 @@
+<div id="container">
+  <div id="header">
+    <div class="avatarSection">
+      <div class="picture">
+        <img src="../../assets/images/noPic.svg" />
+      </div>
+      <div class="nameSection">{{otheruserName}}</div>
+    </div>
+    <div class="actionButtons">
+      <img src="../../assets/images/attached.svg" />
+      <img src="../../assets/images/moreVertIcon.svg" />
+    </div>
+  </div>
+  <div id="body">
+    <div
+      class="message"
+      [ngClass]="{ me: message.senderId == userId ? false : true }"
+      *ngFor="let message of conversations"
+    > 
+      <div class ="file" *ngIf="message.type == 'image'">
+        
+        <div class="time">{{recentChatDate(message.dateTime) }}</div>
+        <img  [src]="localPath + message.content" alt="Image" width="350px" height="200px">
+      </div>
+      
+      <video controls *ngIf="message.type === 'video'" width="350px" height="200px" >
+        <div class="time">{{recentChatDate(message.dateTime) }}</div>
+        <source [src]="localPath + message.content" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <audio controls *ngIf="message.type === 'audio'" width="350px" height="200px" >
+        <div class="time">{{recentChatDate(message.dateTime) }}</div>
+        <source [src]="localPath + message.content" type="audio/mp3">
+        Your browser does not support the html audio tag.
+      </audio>
+      
+      
+    <!---- Since there are many types of data so depending on type of message we will implement this accordingly. -->
+   
+    <div class = "replymsg overflowrap" *ngIf="message.replyedToId != 0 ">{{(message.replyedToId)}} </div>
+    <div *ngIf="message.type === 'Null'" class="time">{{recentChatDate(message.dateTime) }}</div>
+    <div *ngIf="message.type === 'Null'" class="messageContent" (dblclick)="ToggleReplyMsg(message)">
+        {{ message.content }}
+       
+      
+      </div>
+    </div>
+
+    <!-- <div class="message" *ngFor="let message of conversations" [ngClass]="{ 'me': message.senderId === userId }">
+      <div class="profile-pic">
+        <img src="../../assets/images/profile-pic.jpg" alt="Profile Picture" />
+      </div>
+      <div class="message-content">
+        Your message content goes here -->
+        <!-- {{ message.content }}
+      </div>
+    </div> -->
+
+    
+  </div>
+  <!-- To show the replymessage details if we have selected a message. -->
+  <div class="search-form flex-grow mr-2 margin-to-left-right " style="width: 90%; align-items: center; " [hidden]="!IsReplying">
+    <div class="input-group">
+      <p type="text" class="form-control rounded-pill setColor" id="chatForm" readonly><span class="mdi mdi-reply"></span>  {{messageInput.content | slice:0:40}}{{ messageInput.content.length > 40 ? '...' : '' }}</p>
+      <span class="close-button onhoverr" aria-label="Close alert" data-close (click)="CloseRplyMsg()" >
+        <span aria-hidden="true">&times;</span>
+      </span>
+    </div>
+  </div>
+
+  <div id="footer">
+      <!-- <div id="smileyIcon" >
+          <img
+            style=" position: relative; bottom: 50px;"
+            darkMode = "false"
+            src="../../assets/images/smileIcon.svg"
+            (click)="toggleEmoji(message)"
+          />
+          <emoji-mart class="emoji-mart" set="apple" *ngIf="showEmoji" (emojiClick)="Emoji($event, message)" [showPreview]="false">
+          </emoji-mart>
+        </div> -->
+        <div id="smileyIcon">
+          <img
+            (click)="emojiPickerVisible = !emojiPickerVisible"
+            src="../../assets/images/smileIcon.svg"
+          />
+          <emoji-mart
+            (emojiClick)="emojiClicked($event)"
+            *ngIf="emojiPickerVisible"
+            style="position: absolute; bottom: 50px"
+            [darkMode]="false"
+            title="Pick your emoji…"
+            emoji="point_up"
+          ></emoji-mart>
+        </div>
+    <div id="textarea">
+      <textarea
+        [(ngModel)]="message"
+        (keyup.enter)="submitMessage($event)"
+      ></textarea>
+    </div>
+    <div id="fileIcon">
+      <img src="../assets/images/fileIcon.svg" (click)="openBasicModal(basicModal)" />
+    </div>
+    <!-- MODAL -->
+    <ng-template #basicModal let-modal>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Select File To Send</h5>
+        <button type="button" class="close" (click)="modal.close()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="file" class="file-upload" (change)="onFileSelected($event)" #File accept="audio/*,video/*,image/*">
+        <div *ngIf="isImage(fileType)">
+          <img [src]="imageSrc"  width="300" />
+        </div>
+        
+        <!-- Audio Preview -->
+        <div *ngIf="isAudio(fileType)">
+          <audio controls [src]="imageSrc"></audio>
+        </div>
+        
+        <!-- Video Preview -->
+        <div *ngIf="isVideo(fileType)">
+          <video controls [src]="imageSrc" width="300"></video>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.close();removePreview()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="uploadFile();modal.close();removePreview()">Send</button>
+      </div>
+    </ng-template>
+    
+    <!-- <div id="micIcon">
+      <img src="../../assets/images/voiceIcon.svg" />
+    </div> -->
+  </div>
+</div>

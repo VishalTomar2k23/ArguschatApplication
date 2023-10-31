@@ -1,0 +1,71 @@
+<div id="sidebar">
+  <div id="row1">
+    <div id="sidebarHeader">
+      <div class="avatarContainer" >
+        <!-- we will add a default image if we are not able to load the image. -->
+        <img src="../../assets/images/noPic.svg " (click)="openBasicModal(basicModal)" />
+      </div>
+      <div class="actionsContainer">
+        <div class="dropdown">
+          <img src="../../assets/images/moreVertIcon.svg" />
+          <div class="dropdown-content">
+              <button routerLink = "/view-profile" class="btn">View-Profile</button>
+              <button routerLink = "/edit-profile" class="btn">Edit-Profile</button>
+              <button class="btn" (click)="logout()">Logout</button>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    <div id="searchBox">
+      <img width="19" src="../../assets/images/searchIcon.svg" />
+      <input type="text" (keyup)="search($event)" placeholder="Search or start the new chat" />
+      <ul *ngIf="results" class="search-results">
+        <li *ngFor=" let result of results">
+          {{result.userName}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="mark-as-read-container">
+    <button class="mark-as-read-btn" title="Mark All as Read" (click)="MarkAllAsRead()">
+      <img class="checkbox-icon" src="../../../../assets/images/Markallasread.svg" alt="Checkbox icon" />
+    </button>
+    <div class="description">Mark All as Read</div>
+  </div>
+  <div id="messageListHolder">
+    <div class="conversation" *ngFor="let conversation of conversations" (click)="onClick(conversation.userName)">
+      <div class="picture">
+        <img src="../../assets/images/noPic.svg" >
+      </div>
+      <div class="content">
+        <div class="conversationHeader">
+          <div class="name"> {{ conversation.firstName }} </div>
+          <div class="time">{{ recentChatDate(conversation.dateTime) }}</div>
+          <div class="unread-messages" *ngIf="x> 0"> 
+            {{ x }}
+          </div>
+          <p class="" title="Mark all as read" (click)="MarkAsRead($event,conversation.userName)">
+            <img width="19" src="../../assets/images/check-circle.svg" />
+          </p>
+        </div>
+        <div *ngIf="!conversation.content.includes('/chat/')">{{ conversation.content | slice:0:20 }}{{ conversation.content.length > 40 ? '...' : '' }}</div>
+              <div *ngIf="conversation.content.includes('/chat/')" >Media File</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #basicModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Profile Image</h5>
+    <button type="button" class="close" (click)="modal.close('by: close icon')" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body d-flex align-items-center justify-content-center" >
+      <img [src]="profileImageUrl" alt="../../assets/images/noPic.svg" class="img-fluid">
+  </div>
+</ng-template>

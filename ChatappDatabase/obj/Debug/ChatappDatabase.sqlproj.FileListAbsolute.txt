@@ -1,0 +1,16 @@
+C:\Users\Yuvraj\Desktop\Ecommerce_Website\backend\ChatappDatabase\bin\Debug\ChatappDatabase.dacpac
+C:\Users\Yuvraj\Desktop\Ecommerce_Website\backend\ChatappDatabase\bin\Debug\ChatappDatabase.dll
+C:\Users\Yuvraj\Desktop\Ecommerce_Website\backend\ChatappDatabase\bin\Debug\ChatappDatabase.pdb
+C:\Users\Yuvraj\Desktop\Ecommerce_Website\backend\ChatappDatabase\obj\Debug\ChatappDatabase.sqlproj.AssemblyReference.cache
+C:\Users\Yuvraj\Desktop\Ecommerce_Website\backend\ChatappDatabase\obj\Debug\ChatappDatabase.dll
+C:\Users\Yuvraj\Desktop\Ecommerce_Website\backend\ChatappDatabase\obj\Debug\ChatappDatabase.pdb
+C:\Users\Yuvraj\Desktop\Ecommerce_Website\backend\ChatappDatabase\obj\Debug\Model.xml
+C:\Users\Yuvraj\Desktop\Ecommerce_Website\backend\ChatappDatabase\obj\Debug\refactor.xml
+C:\Users\Yuvraj\Desktop\Ecommerce_Website\backend\ChatappDatabase\obj\Debug\postdeploy.sql
+C:\Users\Yuvraj\Desktop\Ecommerce_Website\backend\ChatappDatabase\obj\Debug\predeploy.sql
+C:\Users\Yuvraj\Desktop\test\trainingapp\ChatappDatabase\bin\Debug\ChatappDatabase.dacpac
+C:\Users\Yuvraj\Desktop\test\trainingapp\ChatappDatabase\bin\Debug\ChatappDatabase.dll
+C:\Users\Yuvraj\Desktop\test\trainingapp\ChatappDatabase\bin\Debug\ChatappDatabase.pdb
+C:\Users\Yuvraj\Desktop\test\trainingapp\ChatappDatabase\obj\Debug\ChatappDatabase.sqlproj.AssemblyReference.cache
+C:\Users\Yuvraj\Desktop\test\trainingapp\ChatappDatabase\obj\Debug\ChatappDatabase.dll
+C:\Users\Yuvraj\Desktop\test\trainingapp\ChatappDatabase\obj\Debug\ChatappDatabase.pdb

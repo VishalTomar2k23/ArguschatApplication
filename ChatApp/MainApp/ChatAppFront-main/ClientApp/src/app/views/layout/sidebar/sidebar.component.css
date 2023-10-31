@@ -1,0 +1,305 @@
+#sidebar {
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid #e1e4e5;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#sidebar #row1 {
+    display: flex;
+    flex-direction: column;
+}
+#sidebar #row1 #sidebarHeader {
+    flex-basis: 67px;
+    background-color: #eee;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+    
+}
+#sidebar #row1 #sidebarHeader .avatarContainer {
+    flex-basis: 43px;
+    height: 43px;
+}
+#sidebar #row1 #sidebarHeader .avatarContainer img {
+    height: 100%;
+}
+#sidebar #row1 #sidebarHeader .actionsContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  
+}
+#sidebar #row1 #searchBox {
+    flex-basis: 50px;
+    background-color: #fbfbfb;
+    border-bottom: 1px solid #e1e4e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#sidebar #row1 #searchBox img {
+    position: absolute;
+    left: 55px;
+}
+#sidebar #row1 #searchBox input {
+    width: calc(90% - 60px);
+    border: none;
+    border-radius: 20px;
+    height: 70%;
+    padding-left: 40px;
+    padding-right: 20px;
+    color: #a4a4a4;
+    outline: none;
+    box-shadow: 0px 0px 3px #efefef;
+}
+#sidebar #row1 #searchBox input::placeholder {
+    color: #a4a4a4;
+    font-weight: 100;
+}
+/* #sidebar #noConversations {
+    padding-top: 30px;
+    text-align: center;
+    color: #b9b9b9;
+    font-size: 18px;
+    font-weight: 100;
+}
+#sidebar #sidebarContent {
+    flex-grow: 1;
+    overflow: auto;
+}
+#sidebar #sidebarContent .conversation {
+    height: 67px;
+    display: flex;
+    padding-right: 5px;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+#sidebar #sidebarContent .conversation:hover {
+    background-color: rgba(204, 204, 204, 0.05);
+}
+#sidebar #sidebarContent .conversation .picture {
+    flex-basis: 73px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#sidebar #sidebarContent .conversation .picture img {
+    max-width: 100%;
+    width: 48px;
+}
+#sidebar #sidebarContent .conversation .content {
+    border-bottom: 1px solid #f2f2f2;
+    flex-grow: 1;
+    padding: 13px 0px;
+    padding-right: 10px;
+}
+#sidebar #sidebarContent .conversation .content .conversationHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+}
+#sidebar #sidebarContent .conversation .content .conversationHeader .name {
+    color: #040404;
+}
+#sidebar #sidebarContent .conversation .content .conversationHeader .time {
+    color: #979797;
+    font-size: 13px;
+    padding-top: 2px;
+}
+#sidebar #sidebarContent .conversation .content .message {
+    color: #717171;
+    font-size: 13px;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+    
+#sidebar #sidebarContent .conversation .content .message img {
+    margin-right: 2px;
+} */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .search-results {
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: #fff;
+    z-index: 1;
+  }
+  
+  .search-results ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .search-results li {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .search-results li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .sidebarContent{
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height:400px;
+    overflow: auto;
+    scrollbar-width: thin;
+   
+    &::-webkit-scrollbar {
+      width: 30px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background-color: lightgrey;
+    }
+  }
+
+  .conversation {
+    display: flex;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    
+  
+  }
+
+  .picture {
+    margin-right: 15px;
+  }
+
+  .picture img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .content {
+    flex-grow: 1;
+  
+  }
+
+  .conversationHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    
+  }
+
+  .name {
+    font-weight: bold;
+  }
+
+  .time {
+    color: #888;
+  }
+
+  .message {
+    font-size: 14px;
+    color: #333;
+    
+  }
+
+#messageListHolder {
+    overflow-y: scroll;
+}
+
+/* Style for the "Mark all as read" icon */
+.conversationHeader p {
+  margin: 0;
+  cursor: pointer;
+}
+/* Style for the "Media File" message */
+.content div {
+  color: #555;
+}
+
+/* Hover effect for the conversation item */
+.conversation:hover {
+  background-color: #f0f0f0;
+}
+
+/* Styling for the check-circle icon */
+.conversationHeader img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Styling for the ellipsis (...) in truncated content */
+.content div:first-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Styling for the unread messages icon */
+.unread-messages {
+  background-color: white; 
+  border-style: groove;
+  color: black;
+  border-radius: 50%; 
+  padding: 5px 10px; 
+  font-size: 12px; 
+}
+/* MArk all as read  */
+.mark-as-read-container {
+  display: flex;
+  align-items: center;
+}
+
+.mark-as-read-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.checkbox-icon {
+  width: 20px; /* Adjust width as needed */
+  height: 20px; /* Adjust height as needed */
+}
+
+.description {
+  margin-left: 10px; /* Adjust margin as needed to separate from the button */
+  font-size: 14px; /* Adjust font size as needed */
+}

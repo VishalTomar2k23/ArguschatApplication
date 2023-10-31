@@ -1,0 +1,46 @@
+/* Apply some general styling to the body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the about-section */
+.about-section {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Style the about-text */
+.about-text {
+    text-align: left;
+}
+
+.dark-color {
+    color: #333; /* Dark text color */
+}
+
+.theme-color {
+    color: #007bff; /* Theme color, adjust as needed */
+}
+
+/* Style the about-list */
+.about-list label {
+    font-weight: bold;
+}
+
+.about-list p {
+    margin-bottom: 15px;
+}
+
+/* Style the about-avatar */
+.about-avatar img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: Add a border-radius to the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+}

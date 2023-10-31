@@ -1,0 +1,57 @@
+.card {
+    width: 400px;
+    margin: 20px auto;
+}
+
+/* Style for form elements */
+.form-control {
+    margin-bottom: 15px;
+}
+
+/* Style for error messages */
+.text-danger {
+    color: red;
+}
+
+/* Style for the dropdown button */
+.dropdown {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Style for the modal */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+/* Style for the dropdown menu items */
+.dropdown-menu {
+    background-color: #f8f9fa;
+}
+
+.dropdown-item {
+    color: #000;
+}
+
+/* Style for the buttons */
+.btn {
+    margin-top: 10px;
+}
